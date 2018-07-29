@@ -4,9 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import { home } from "../Home/home";
+import { experience } from "../Experience/experience";
+import { projects } from "../Projects/projects";
+import { education } from "../Education/education";
+import { Route, NavLink } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -51,18 +54,20 @@ function ClippedDrawer(props) {
         }}
       >
         <div className={classes.toolbar} />
-        <p>Home</p>
+        <NavLink to="/home" style={{ textDecoration: "none", color: "green" }} activeStyle={{ color: "white", backgroundColor: "green" }}><p>Home</p></NavLink>
         <Divider />
-        <p>Education</p>
+        <NavLink to="/education" style={{ textDecoration: "none", color: "green" }} activeStyle={{ color: "white", backgroundColor: "green" }}><p>Education</p></NavLink>
         <Divider />
-        <p>Experience</p>
+        <NavLink to="/experience" style={{ textDecoration: "none", color: "green" }} activeStyle={{ color: "white", backgroundColor: "green" }}><p>Experience</p></NavLink>
         <Divider />
-        <p>Projects</p>
+        <NavLink to="/projects" style={{ textDecoration: "none", color: "green" }} activeStyle={{ color: "white", backgroundColor: "green" }}><p>Projects</p></NavLink>
 
       </Drawer>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
+        <Route path="/home" component={home} />
+        <Route path="/experience" component={experience} />
+        <Route path="/education" component={education} />
+        <Route path="/projects" component={projects} />
       </main>
     </div>
   );
