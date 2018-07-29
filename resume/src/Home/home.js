@@ -1,7 +1,10 @@
 import React from "react";
+import HomeCard from "./homecard";
 
 export function home () {
     return (
-        <h1>Home</h1>
+        <div>
+            <HomeCard />
+        </div>
     );
 };
